@@ -138,8 +138,8 @@ class FullAppScreenshotCaptureTest {
     private lateinit var repository: VaultRepository
     private lateinit var prefsFile: File
 
-    private val workspaceScreenshotsDir = File("/app/applet/screenshots")
-    private val artifactRootDir = File("/.aistudio/artifacts/brain/77113e33-7cc7-4f3f-b48b-484cd236a1df")
+    private val workspaceScreenshotsDir = File(System.getProperty("user.dir"), "build/ideavault-screenshots")
+    private val artifactRootDir = File(System.getProperty("user.dir"), "build/ideavault-artifacts")
     private val artifactScreenshotsDir = File(artifactRootDir, "screenshots")
 
     data class ManifestEntry(
@@ -2505,7 +2505,7 @@ class FullAppScreenshotCaptureTest {
             appendLine("3. **`06_user_setup_screen` (Mandatory User Setup Screen)**: Intentionally removed in V2.1+ (`WelcomeAndOnboardingScreen.kt` line 110: *\"No forced name input or account registration\"*). Users can set or change their display name anytime via Settings (`38b_settings_display_name_dialog.png`).")
         }
 
-        val workspaceManifestFile = File("/app/applet/SCREENSHOT_MANIFEST.md")
+        val workspaceManifestFile = File(workspaceScreenshotsDir.parentFile, "SCREENSHOT_MANIFEST.md")
         val workspaceScreenshotsManifestFile = File(workspaceScreenshotsDir, "SCREENSHOT_MANIFEST.md")
         val artifactManifestFile = File(artifactRootDir, "SCREENSHOT_MANIFEST.md")
 
@@ -2514,7 +2514,7 @@ class FullAppScreenshotCaptureTest {
         artifactManifestFile.writeText(md)
 
         val workspaceZipFile = File(workspaceScreenshotsDir, "ideavault_v2_4_screenshots.zip")
-        val rootZipFile = File("/app/applet/ideavault_v2_4_screenshots.zip")
+        val rootZipFile = File(workspaceScreenshotsDir.parentFile, "ideavault_v2_4_screenshots.zip")
         val artifactZipFile = File(artifactRootDir, "ideavault_v2_4_screenshots.zip")
 
         ZipOutputStream(FileOutputStream(workspaceZipFile)).use { zos ->
