@@ -82,7 +82,7 @@ import java.io.File
 import java.io.IOException
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [36])
+@Config(sdk = [35])
 class Stage03RichTextAndDraftRecoveryTest {
 
     @get:Rule
