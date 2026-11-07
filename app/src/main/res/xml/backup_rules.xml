@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Explicit Android Auto Backup policy for IDEAVAULT (API <= 30).
+   Excludes private vault databases, local attachments, recovery snapshots,
+   and DataStore preferences from uncontrolled automatic OS cloud backups.
+   Users manage backups explicitly via IDEAVAULT's validated ZIP Backup & Restore.
+-->
+<full-backup-content>
+    <exclude domain="database" path="." />
+    <exclude domain="file" path="." />
+    <exclude domain="sharedpref" path="." />
+    <exclude domain="root" path="." />
+    <exclude domain="external" path="." />
+</full-backup-content>
