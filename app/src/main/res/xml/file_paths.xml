@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path
+        name="vault_attachments"
+        path="vault_attachments/" />
+    <files-path
+        name="vault_attachment_generations"
+        path="vault_attachment_generations/" />
+</paths>
