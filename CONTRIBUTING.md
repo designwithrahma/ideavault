@@ -1,25 +1,23 @@
 # Contributing to IDEAVAULT
 
-Thanks for your interest in improving IDEAVAULT.
+Thank you for helping improve IDEAVAULT.
 
-## Before starting
+## Before contributing
 
-Read the README and open an issue before a significant change. Keep contributions focused and preserve the existing offline-first behavior and user data.
+1. Search existing issues and pull requests.
+2. Open an issue before a major feature or breaking change.
+3. Create a feature branch and keep your pull request focused.
+4. Explain the change, screenshots if the UI changed, and how you tested it.
 
 ## Development
 
-1. Fork the repository or create a working branch.
-2. Build with the Gradle wrapper: `./gradlew :app:assembleDebug`.
-3. Run available unit tests: `./gradlew :app:testDebugUnitTest`.
-4. Test UI changes on a real Android device or emulator.
-5. Open a pull request with a concise description and screenshots for visual changes.
+- Use the Gradle wrapper checked into the repository.
+- Run `./gradlew :app:testDebugUnitTest :app:assembleDebug` on a machine with the required Android SDK.
+- Do not change the application ID or Room schema casually; database migrations must preserve existing user data.
+- Preserve offline-first behavior, privacy, and accessibility.
+- Do not commit real data, logs, API secrets, local keys, or signing materials.
+- Use the existing app UI patterns and avoid placeholder copy or sample user records.
 
-## Important rules
+## Code and licenses
 
-- Do not introduce destructive Room migrations.
-- Do not upload sample personal vault contents or user backups.
-- Do not commit API keys, signing credentials or private datasets.
-- Preserve the approved IDEAVAULT UI unless a redesign is explicitly agreed upon.
-- Respect MIT source terms and separate bundled font licenses.
-
-Bug reports should include device/Android version, reproduction steps, expected behavior and observed behavior.
+Keep new dependencies and third-party assets properly attributed. Project code contributions are submitted under the project's MIT License unless otherwise agreed.

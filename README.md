@@ -1,73 +1,92 @@
+<div align="center">
+
+<img src="docs/branding/ideavault_logo_1024x1024.png" width="132" alt="IDEAVAULT app logo" />
+
+# IDEAVAULT
+
+**Everything worth remembering.**
+
+An offline-first Android app for ideas, methods, prompts, and notes.
+
+Built by **Rahmathullah · Designwithrahma**.
+
+[![MIT License](https://img.shields.io/badge/license-MIT-111111.svg)](LICENSE)
+
+</div>
+
+## Preview
+
 <p align="center">
-  <img src="docs/branding/ideavault_logo_1024x1024.png" alt="IDEAVAULT app icon" width="120" />
+  <img src="screenshots/08_home_screen_dark.png" alt="IDEAVAULT dark home screen" width="240" />
+  <img src="screenshots/08c_home_screen_light.png" alt="IDEAVAULT light home screen" width="240" />
+  <img src="screenshots/17_editor_method_screen.png" alt="IDEAVAULT method editor" width="240" />
 </p>
 
-<h1 align="center">IDEAVAULT</h1>
-<p align="center"><strong>Everything worth remembering.</strong></p>
-<p align="center">An offline-first Android app to collect ideas, document methods, save prompts and write notes.</p>
-<p align="center">
-  <img alt="Android" src="https://img.shields.io/badge/Android-Kotlin-191919?logo=android&logoColor=white" />
-  <img alt="UI" src="https://img.shields.io/badge/UI-Jetpack%20Compose-F9D55D" />
-  <a href="LICENSE"><img alt="MIT" src="https://img.shields.io/badge/License-MIT-191919" /></a>
-</p>
+> These screenshots are application UI test captures. They are not photos from a physical phone.
 
-## What you can do
+## Features
 
-- **Ideas:** Save thoughts, track idea status, and organize items with tags, folders and favourites.
-- **Methods:** Build reusable workflows with numbered steps, alternative routes and follow progress.
-- **Prompts:** Keep original prompt text and whitespace intact.
-- **Notes:** Write rich content with text styling, lists, code blocks and attachments.
-- **Custom types:** Build your own structured entries and fields.
-- **Smart import and export:** Work with JSON, Markdown and plain text, including bulk Method steps.
-- **Offline-first:** No account or internet connection is required for your local vault.
-- **Privacy tools:** Local App Lock and backup/restore.
+- **Ideas:** capture thoughts, add details, track progress, and organize your work.
+- **Methods:** document steps, alternate routes, and follow progress without changing the original method.
+- **Prompts:** store reusable prompts with formatting and placeholders intact.
+- **Notes and knowledge:** formatted text, content blocks, checklists, and attachments.
+- **Custom types:** add structured information with your own fields.
+- **Folders, tags, search, and favourites:** find what you saved locally.
+- **Smart Import, Copy for AI, and export:** share and move your content deliberately.
+- **Trash, backup, and restore:** local recovery tools for important entries.
+- **App Lock, light/dark themes, and onboarding.**
 
-IDEAVAULT is **Android-only** in this release. Cloud sync and a web version are not part of v2.4.0.
-
-## App screenshots
-
-Actual UI captures from the project's Android UI/Robolectric testing workflow. These are not AI-generated interface mockups or photographs of physical devices.
-
-| Home (dark) | Home (light) | Method editor |
-| :---: | :---: | :---: |
-| ![Dark home](screenshots/08_home_screen_dark.png) | ![Light home](screenshots/08c_home_screen_light.png) | ![Method editor](screenshots/17_editor_method_screen.png) |
-
-| Note editor | Smart Import | Custom Types |
-| :---: | :---: | :---: |
-| ![Note editor](screenshots/19_editor_note_screen.png) | ![Smart Import](screenshots/28_smart_import_bottom_sheet.png) | ![Custom Type builder](screenshots/21_custom_type_builder_dialog.png) |
+No account is required for the core offline experience. Data is stored locally using Room and DataStore.
 
 ## Tech stack
 
-Kotlin · Jetpack Compose · Material 3 · Room · DataStore · Coroutines · Robolectric.
+Kotlin · Jetpack Compose / Material 3 · Room · DataStore · Robolectric
 
-- Minimum Android version: **Android 7.0 (API 24)**
-- Target SDK: **36**
-- Source version: **2.4.0**
-- Room database version: **4**, with non-destructive migrations
+Android minimum SDK **24**. App ID: `com.aistudio.ideavault.vltpkx`. Current source version: **2.4.0** (version code 4).
 
-## Build from source
+## Build
 
-Install Android Studio, an Android SDK that supports this project's compile SDK, and a compatible JDK. The repository includes the official **Gradle 9.3.1 wrapper**.
+1. Install Android Studio with an appropriate Android SDK, JDK compatible with Android Gradle Plugin 9.1.1 (JDK 17 or newer), and the SDK platform required by `app/build.gradle.kts` (Android 36.1).
+2. Open this repository as an Android Studio project.
+3. Let Gradle sync using the **included Gradle 9.3.1 wrapper**.
+4. Run the `app` debug configuration on an emulator or Android device.
+
+Alternatively, from the repository root:
 
 ```bash
 ./gradlew :app:assembleDebug
 ./gradlew :app:testDebugUnitTest
 ```
 
-On Windows, use `gradlew.bat` instead of `./gradlew`. The debug APK is normally written to `app/build/outputs/apk/debug/app-debug.apk`.
+On Windows, use `gradlew.bat` in place of `./gradlew`.
 
-A fresh checkout uses Android's standard debug signing key. **Do not commit signing keys, `local.properties`, credentials, or personal vault backups.** For an update over an existing installed build, the signing certificate must match.
+**Important:** Android SDK and dependency downloads are required to build; the app itself is designed to work offline. The repository does not include a signing keystore, secrets, or an officially verified release APK. Use your own signing key for production. Existing installations must use the same signing identity to receive app updates.
 
-## Release status
+## Project layout
 
-The public source repository is being prepared for its initial open-source release. **No verified, signed release APK has been published yet.** Device smoke tests and clean-checkout build verification are separate release checks.
+- `app/src/main/` — Android source code and resources
+- `app/src/test/` — unit tests and Robolectric tests
+- `app/schemas/` — Room database schema history
+- `screenshots/` — selected UI captures
+- `docs/branding/` — original logo exports
+- `docs/licenses/` — font redistribution license notices
 
-## Contributing
+## Privacy
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). To report security problems, see [SECURITY.md](SECURITY.md).
+Core content is stored on the device. Attachments are stored in app-private storage. Backups and exports are user-controlled. Review requested Android permissions before installing a build.
 
-## License & acknowledgements
+## Contributing and security
 
-IDEAVAULT source code is available under the [MIT License](LICENSE). Bundled **Plus Jakarta Sans** and **JetBrains Mono** fonts retain their own SIL Open Font License notices in [docs/licenses](docs/licenses). See [asset licensing notes](docs/ASSETS_AND_LICENSES.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) before submitting changes. Report security issues privately using the process in [SECURITY.md](SECURITY.md). For license details and font notices, read [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Status
+
+The source is published for review and development. An independently validated signed release build has **not** been published here yet. Please check build workflows and test results before relying on a release.
+
+## License
+
+IDEAVAULT application code is available under the [MIT License](LICENSE). Bundled Plus Jakarta Sans and JetBrains Mono fonts are separately licensed under SIL Open Font License 1.1, with notices in `docs/licenses/`.
+
+---
 
 Made by **Rahmathullah | Designwithrahma**.

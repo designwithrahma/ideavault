@@ -1,14 +1,12 @@
 # Changelog
 
-## 2.4.0 — Source release preparation (2026)
+This repository starts with the IDEAVAULT **2.4.0** Android source.
 
-IDEAVAULT Android adds ideas, methods with alternative routes and follow progress, literal prompts, notes, custom content types, Smart Import/Export, App Lock and local backup/restore.
+## 2.4.0 — Source publication (2026-11-07)
 
-The source has undergone multiple Kotlin, database integrity, UI and Robolectric review passes. An official signed APK release is **not yet published**. Device acceptance and reproducible build checks are still required.
+- Published Kotlin/Jetpack Compose application source, Room schemas, and test suites.
+- Included original branding and a selection of app UI test captures.
+- Added Gradle wrapper, MIT source license, and third-party font notices.
+- Prepared debug builds to work without a checked-in private debug keystore.
 
-### Project maintenance
-
-- Retain Room schema version 4 and existing migrations.
-- Remove unused AI Template Generator entry points.
-- Preserve the offline-first, user-controlled data model.
-- Add public build instructions, MIT license and bundled-font license notices.
+**Release status:** Source publication only. An independently tested, signed production APK is not included.

@@ -1,44 +1,31 @@
-# Android Studio, Gradle and build outputs
+# Local IDE/build state
 .gradle/
-**/build/
+.kotlin/
 .idea/
 *.iml
+**/build/
 local.properties
 captures/
-.externalNativeBuild/
-.cxx/
 .DS_Store
 Thumbs.db
 
-# Local signing credentials: never publish them
-*.keystore
-*.jks
-*.p12
-*.pem
-*.key
-key.properties
-debug.keystore
-my-upload-key.jks
-
-# Private environment and service configuration
+# Credentials and signing keys
 .env
 .env.*
 !.env.example
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
 google-services.json
-secrets.properties
-secrets.defaults.properties
+service-account*.json
 
-# IDE and Google AI Studio transient files
+# Temporary app snapshots / AI Studio working files
 .aistudio/
+**/.tempmediaStorage/
 public/assets/aistudio/
-*.log
-
-# Binary release outputs (attach releases to GitHub Releases)
 *.apk
 *.aab
-*.zip
-*.bak
-
-# Local test reports
-test-results/
-reports/
+*.log

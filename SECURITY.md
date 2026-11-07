@@ -1,9 +1,13 @@
 # Security policy
 
-IDEAVAULT stores personal content on the user's device. Treat private notes, exports and backups as sensitive.
+## Reporting issues
 
-Please **do not post vulnerabilities, private data, access tokens or signing keys in public issues**. Prefer GitHub's private vulnerability reporting for this repository, where available, or contact the maintainer through their GitHub profile.
+Please **do not** publicly publish exploit steps, private data, leaked credentials or security vulnerabilities in GitHub issues.
 
-Include reproduction steps and affected versions. We do not guarantee a fixed disclosure or response timeline.
+Use GitHub's private vulnerability reporting feature for this repository if it is enabled. If it is not available, contact the repository maintainer privately through a verified contact channel on their GitHub profile.
 
-Before installing builds from untrusted sources, check the repository and release authenticity. Debug APKs are for testing, not the official signed public release.
+## Scope
+
+Data privacy, attachment handling, App Lock, backup and restore validation, local persistence, and export behavior are security-sensitive. Avoid attaching personal vault backups to issue reports.
+
+No guaranteed response or patch timeframe is currently published.
