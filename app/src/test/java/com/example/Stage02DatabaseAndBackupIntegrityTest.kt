@@ -63,7 +63,7 @@ import java.util.zip.ZipInputStream
 import java.util.zip.ZipOutputStream
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [36])
+@Config(sdk = [35])
 class Stage02DatabaseAndBackupIntegrityTest {
 
     private lateinit var context: Context
